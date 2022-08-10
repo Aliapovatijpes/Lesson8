@@ -16,6 +16,8 @@ export MYSQL_ROOT_PASSWORD=rootpass
 export PMA_HOST=mysql-service
 export PMA_PORT=3306
 export MYSQL_ROOT_PASSWORD=rootpass
+mkdir -p /home/admin
+cd /home/admin
 touch compose.yaml
 echo 'version: "3.8"
 services:
@@ -38,8 +40,4 @@ services:
 networks:
         lamp:
 ' >> compose.yaml
-pwd >> pwd.txt
-ls >> ls.txt
-docker compose version >> dversion.txt
 docker compose up -d
-docker compose version >> dversion.txt
